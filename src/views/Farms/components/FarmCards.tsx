@@ -14,7 +14,7 @@ import useAllStakedValue, {
   StakedValue,
 } from '../../../hooks/useAllStakedValue'
 import useFarms from '../../../hooks/useFarms'
-import useLuaPrice from '../../../hooks/useLuaPrice'
+import useIniPrice from '../../../hooks/useIniPrice'
 import usePoolActive from '../../../hooks/usePoolActive'
 import useSushi from '../../../hooks/useSushi'
 import { NUMBER_BLOCKS_PER_YEAR, START_NEW_POOL_AT } from '../../../sushi/lib/constants'
@@ -29,14 +29,14 @@ interface FarmWithStakedValue extends Farm {
   tokenPriceInToken2: BigNumber
   usdValue: BigNumber
   poolWeight: BigNumber
-  luaPrice: BigNumber
+  iniPrice: BigNumber
 }
 
 const FarmCards: React.FC = () => {
   const [farms] = useFarms()
   const stakedValue = useAllStakedValue()
 
-  const luaPrice = useLuaPrice()
+  const iniPrice = useIniPrice()
 
   const rows = farms.reduce<FarmWithStakedValue[][]>(
     (farmRows, farm, i) => {
@@ -48,7 +48,7 @@ const FarmCards: React.FC = () => {
         tokenPriceInToken2: (stakedValue[i] || {}).tokenPriceInToken2 || new BigNumber(0),
         poolWeight: (stakedValue[i] || {}).poolWeight || new BigNumber(0),
         usdValue: (stakedValue[i] || {}).usdValue || new BigNumber(0),
-        luaPrice
+        iniPrice
       }
       const newFarmRows = [...farmRows]
       if (newFarmRows[newFarmRows.length - 1].length === 3) {
@@ -120,7 +120,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
 
   return (
     <StyledCardWrapper>
-      {farm.tokenSymbol === 'LUA' && <StyledCardAccent />}
+      {farm.tokenSymbol === 'INI' && <StyledCardAccent />}
       <Card>
         <CardContent>
           <StyledContent>
@@ -163,7 +163,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
               <span>Reward</span>
               <span>
                 {newReward &&
-                  <><b>{getBalanceNumber(newReward).toFixed(2)} LUA</b> / block</>
+                  <><b>{getBalanceNumber(newReward).toFixed(2)} INI</b> / block</>
                 }
                 {!newReward && "~"}
               </span>
@@ -171,8 +171,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
             <StyledInsight>
               <span>APY</span>
               <span style={{fontWeight: 'bold', color: '#4caf50'}}>
-                {newReward && farm.poolWeight && farm.luaPrice && farm.usdValue ?
-                  `${parseFloat(farm.luaPrice
+                {newReward && farm.poolWeight && farm.iniPrice && farm.usdValue ?
+                  `${parseFloat(farm.iniPrice
                     .times(NUMBER_BLOCKS_PER_YEAR)
                     .times(newReward.div(10 ** 18))
                     .div(farm.usdValue)

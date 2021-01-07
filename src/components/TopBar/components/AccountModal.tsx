@@ -16,11 +16,11 @@ import Spacer from '../../Spacer'
 import Value from '../../Value'
 import qrCode from '../../../assets/img/qr-code.png'
 import IconView from '../../../assets/img/icon-view.svg'
-import IconLua1 from '../../../assets/img/lua1.png'
-import IconLua2 from '../../../assets/img/lua2.png'
-import IconLua3 from '../../../assets/img/lua3.png'
-import IconLua4 from '../../../assets/img/lua4.png'
-import IconLua5 from '../../../assets/img/lua5.png'
+import IconIni1 from '../../../assets/img/ini1.png'
+import IconIni2 from '../../../assets/img/ini2.png'
+import IconIni3 from '../../../assets/img/ini3.png'
+import IconIni4 from '../../../assets/img/ini4.png'
+import IconIni5 from '../../../assets/img/ini5.png'
 import useAllStakedFarms from '../../../hooks/useAllStakedFarms'
 import { Link, useHistory } from 'react-router-dom'
 import useCanUnlockAmount from '../../../hooks/useCanUnlockAmount'
@@ -77,7 +77,7 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
                                             </TextMin>
                                             <TextMedium>
                                                 <strong>{parseFloat(getBalanceNumber(sushiBalance).toFixed(4)).toLocaleString('en-US')}</strong>
-                                                <span>LUA</span>
+                                                <span>INI</span>
                                             </TextMedium>
                                             {/* <TextMin2>
                                                 ~795,6 $
@@ -131,8 +131,8 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
                                         <Col className="col-8 align-center">
                                             <BoxFlex>
                                                 <div style={{display: 'flex', marginRight: 10}}>
-                                                    <img src={e.icon} alt="Lua" height={30} style={{position: 'relative', zIndex: 2}}/> 
-                                                    <img src={e.icon2} alt="Lua" height={30} style={{position: 'relative', zIndex: 1, marginLeft: -10}}/>
+                                                    <img src={e.icon} alt="Ini" height={30} style={{position: 'relative', zIndex: 2}}/> 
+                                                    <img src={e.icon2} alt="Ini" height={30} style={{position: 'relative', zIndex: 1, marginLeft: -10}}/>
                                                 </div>
                                                 <div>
                                                     <TextMedium>
@@ -145,7 +145,7 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
                                             </BoxFlex>
                                         </Col>
                                         <Col className="col-4 text-green align-center justify-right">
-                                            + {parseFloat(getBalanceNumber(e.pendingReward).toFixed(4)).toLocaleString('en-US')} LUA
+                                            + {parseFloat(getBalanceNumber(e.pendingReward).toFixed(4)).toLocaleString('en-US')} INI
                                         </Col>
                                     </RowHighLight>
                                 </BoxItem>

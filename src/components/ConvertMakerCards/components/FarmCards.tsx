@@ -108,7 +108,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
 
   return (
     <StyledCardWrapper>
-      {/* {farm.tokenSymbol === 'LUA' && <StyledCardAccent />} */}
+      {/* {farm.tokenSymbol === 'INI' && <StyledCardAccent />} */}
       <Card>
         <CardContent>
           <StyledContent>     
@@ -119,7 +119,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
             </div>      
             <StyledTitle>{`${farm.token0Symbol} - ${farm.token1Symbol}`}</StyledTitle>
             <StyledInsight>
-              <span>LuaSwap LP</span>
+              <span>IniSwap LP</span>
               <span>
                 {farm.lpBalance &&
                   <><b>{ farm.lpBalance.toFixed(12) } </b></>

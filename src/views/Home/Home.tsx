@@ -9,7 +9,7 @@ import Balances from './components/Balances'
 import CustomCountDown from './components/CustomCountDown'
 import Icon_Tip from '../../assets/img/pro-tip-icon.svg'
 import { START_REWARD_AT_BLOCK } from '../../sushi/lib/constants'
-import LuaLogo from '../../assets/img/logo.png'
+import IniLogo from '../../assets/img/logo.png'
 import FarmCards from '../Farms/components/FarmCards'
 import TotalLockValue from './components/TotalLockValue'
 
@@ -24,19 +24,19 @@ const Home: React.FC = () => {
         <SpacerRes>
             <Spacer size="lg" />
             <StyledLogo>
-                <img className="d-md-none" src={LuaLogo} height="150" style={{ marginTop: -4 }} />
+                <img className="d-md-none" src={IniLogo} height="150" style={{ marginTop: -4 }} />
             </StyledLogo>
         </SpacerRes>
         <Spacer size="lg" />
         <div style={{fontWeight: 'bold', fontSize: 22, color: '#ffffff'}}>
-            LuaSwap Currently Has <span style={{color: '#4caf50', fontSize: 30}}>$<TotalLockValue /></span> Of Total Locked Value
+            IniSwap Currently Has <span style={{color: '#4caf50', fontSize: 30}}>$<TotalLockValue /></span> Of Total Locked Value
         </div>
         {block < launchBlock && atDate && <>
             <Spacer size="sm" />
             <CustomCountDown date={atDate}/>
             <Spacer size="md" />
             <div>
-                <ReadMore href="https://medium.com/luaswap/introducing-luaswap-org-7e6ff38beefc" target="__blank"> 👉&nbsp;&nbsp;Read The Announcement&nbsp;&nbsp;👈</ReadMore>
+                <ReadMore href="https://medium.com/iniswap/introducing-iniswap-org-7e6ff38beefc" target="__blank"> 👉&nbsp;&nbsp;Read The Announcement&nbsp;&nbsp;👈</ReadMore>
             </div>
             <Spacer size="lg" />
             </>
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
             </Container>
             <Spacer size="md" />
             <div>
-                <ReadMore href="https://medium.com/luaswap/introducing-luaswap-org-7e6ff38beefc" target="__blank"> 👉&nbsp;&nbsp;Read The Announcement&nbsp;&nbsp;👈</ReadMore>
+                <ReadMore href="https://medium.com/iniswap/introducing-iniswap-org-7e6ff38beefc" target="__blank"> 👉&nbsp;&nbsp;Read The Announcement&nbsp;&nbsp;👈</ReadMore>
                 <div style={{color: 'rgb(255,255,255,0.6)', textAlign: 'center', marginTop: 5}}>Do not complain if you don't</div>
             </div>
             <Spacer size="lg" />
@@ -64,14 +64,14 @@ const Home: React.FC = () => {
         </Container>
         <Box className="mt-4">
             <StyledHeading>SELECT YOUR FIELDS</StyledHeading>
-            <StyledParagraph>Earn LUA tokens by staking LUA-V1 LP token</StyledParagraph>
+            <StyledParagraph>Earn INI tokens by staking INI-V1 LP token</StyledParagraph>
             <SpacerRes>
                 <Spacer size="sm" />
             </SpacerRes>
             <StyledInfo>
                 <img src={Icon_Tip} alt="Pro Tip"/>
                 <div>
-				<b>Pro Tip</b>: Stake to any pool and earn <b>8x LUA</b> rewards until <a href="https://etherscan.io/block/countdown/11232600" target="_blank" style={{color: '#ffffff'}}>Nov 10</a>
+				<b>Pro Tip</b>: Stake to any pool and earn <b>8x INI</b> rewards until <a href="https://etherscan.io/block/countdown/11232600" target="_blank" style={{color: '#ffffff'}}>Nov 10</a>
                 </div>
             </StyledInfo>
             <Spacer size="lg" />

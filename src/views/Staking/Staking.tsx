@@ -12,7 +12,7 @@ import WalletProviderModal from '../../components/WalletProviderModal'
 import useModal from '../../hooks/useModal'
 import StakeXSushi from "../StakeXSushi";
 import useSushi from '../../hooks/useSushi'
-import {getXLuaAddress, getXSushiSupply} from "../../sushi/utils";
+import {getXIniAddress, getXSushiSupply} from "../../sushi/utils";
 import {getBalanceNumber} from "../../utils/formatBalance";
 import BigNumber from "bignumber.js";
 
@@ -43,10 +43,10 @@ const Staking: React.FC = () => {
             </StyledLogo>
         </SpacerRes>
         <StyledCardHeader>
-            <Label text={`Welcome to LuaSafe, stake LUA to earn LUA.`}/>
+            <Label text={`Welcome to IniSafe, stake INI to earn INI.`}/>
         </StyledCardHeader>
         <div style={{fontWeight: 'bold', fontSize: 22, color: '#ffffff'}}>
-            LuaSafe Currently has <span style={{color: '#4caf50', fontSize: 30}}>{parseFloat(getBalanceNumber(new BigNumber(totalSupply)).toFixed(2)).toLocaleString('en-US')}</span> LUA Staked
+            IniSafe Currently has <span style={{color: '#4caf50', fontSize: 30}}>{parseFloat(getBalanceNumber(new BigNumber(totalSupply)).toFixed(2)).toLocaleString('en-US')}</span> INI Staked
         </div>
         <Spacer size="md" />
         {!!account ? (

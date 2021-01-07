@@ -4,12 +4,12 @@ import BigNumber from 'bignumber.js'
 import useSushi from './useSushi'
 import axios from 'axios'
 import config from '../config'
-const useLuaPrice = () => {
+const useIniPrice = () => {
   const [price, setPrice] = useState(new BigNumber(0))
   const sushi = useSushi()
 
   const fetchBalance = useCallback(async () => {
-    var { data } = await axios.get(`${config.api}/price/LUA`)
+    var { data } = await axios.get(`${config.api}/price/INI`)
     const value = data.usdPrice
     setPrice(new BigNumber(value * 10 ** 8))
   }, [sushi])
@@ -23,4 +23,4 @@ const useLuaPrice = () => {
   return price
 }
 
-export default useLuaPrice
+export default useIniPrice

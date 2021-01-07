@@ -10,16 +10,16 @@ const Nav: React.FC = () => {
       >
         Contract
       </StyledLink>
-      <StyledLink target="_blank" href="https://github.com/tomochain?q=luaswap">
+      <StyledLink target="_blank" href="https://github.com/tomochain?q=iniswap">
         Github
       </StyledLink>
-      <StyledLink target="_blank" href="https://twitter.com/LuaSwap">
+      <StyledLink target="_blank" href="https://twitter.com/IniSwap">
         Twitter
       </StyledLink>
-      <StyledLink target="_blank" href="https://t.me/LuaSwap">
+      <StyledLink target="_blank" href="https://t.me/IniSwap">
         Telegram
       </StyledLink>
-      <StyledLink target="_blank" href="https://medium.com/luaswap">
+      <StyledLink target="_blank" href="https://medium.com/iniswap">
         Medium
       </StyledLink>
     </StyledNav>

@@ -20,32 +20,32 @@ import { getXSushiSupply, getSushiAddress} from "../../../sushi/utils";
 import useSushi from '../../../hooks/useSushi'
 
 interface HarvestProps {
-  xLuaTokenAddress: string
+  xIniTokenAddress: string
 }
 
-const UnstakeXSushi: React.FC<HarvestProps> = ({xLuaTokenAddress}) => {
+const UnstakeXSushi: React.FC<HarvestProps> = ({xIniTokenAddress}) => {
   const sushi = useSushi()
-  const myXLua = useTokenBalance(xLuaTokenAddress)
-  const totalLuaInSafe = useTotalShare(getSushiAddress(sushi), xLuaTokenAddress)
-  const [totalSupplyXLua, setTotalSupplyXLua] = useState<BigNumber>()
+  const myXIni = useTokenBalance(xIniTokenAddress)
+  const totalIniInSafe = useTotalShare(getSushiAddress(sushi), xIniTokenAddress)
+  const [totalSupplyXIni, setTotalSupplyXIni] = useState<BigNumber>()
   const [pendingTx, setPendingTx] = useState(false)
-  const trackingAPYBalanceXLua = useTokenBalanceOf(xLuaTokenAddress,'0xdEad000000000000000000000000000000000000');
+  const trackingAPYBalanceXIni = useTokenBalanceOf(xIniTokenAddress,'0xdEad000000000000000000000000000000000000');
 
   useEffect(() => {
-    async function fetchTotalSupplyXLua() {
+    async function fetchTotalSupplyXIni() {
       const supply = await getXSushiSupply(sushi)
-      setTotalSupplyXLua(supply)
+      setTotalSupplyXIni(supply)
     }
     if (sushi) {
-      fetchTotalSupplyXLua()
+      fetchTotalSupplyXIni()
     }
-  }, [sushi, setTotalSupplyXLua])
+  }, [sushi, setTotalSupplyXIni])
 
-  const xLuaToLua = myXLua.multipliedBy(totalLuaInSafe).dividedBy(totalSupplyXLua)
-  const trackingReward = trackingAPYBalanceXLua.multipliedBy(totalLuaInSafe).dividedBy(totalSupplyXLua).minus(10 * 10 ** 18)
+  const xIniToIni = myXIni.multipliedBy(totalIniInSafe).dividedBy(totalSupplyXIni)
+  const trackingReward = trackingAPYBalanceXIni.multipliedBy(totalIniInSafe).dividedBy(totalSupplyXIni).minus(10 * 10 ** 18)
 
   const {onLeave} = useLeave()
-  const tokenName = "xLUA"
+  const tokenName = "xINI"
   var oneDay = 1000 * 60 * 60 * 24; // hours*minutes*seconds*milliseconds
   var initStakeAt =  new Date(1603904400000);
   var toDay =   new Date();       // Today
@@ -54,7 +54,7 @@ const UnstakeXSushi: React.FC<HarvestProps> = ({xLuaTokenAddress}) => {
 
   const [onPresentLeave] = useModal(
     <WithdrawModal
-      max={myXLua}
+      max={myXIni}
       onConfirm={onLeave}
       tokenName={tokenName}
     />,
@@ -65,15 +65,15 @@ const UnstakeXSushi: React.FC<HarvestProps> = ({xLuaTokenAddress}) => {
       <CardContent>
         <StyledCardContentInner>
           <StyledCardHeader>
-            <Label text={`YOUR xLUA`}/>
+            <Label text={`YOUR xINI`}/>
             <br/>
-            <Value value={getBalanceNumber(myXLua)}/>
-            <Label text={`~ ${xLuaToLua.div(10 ** 18).toFixed(2)} LUA`}/>
+            <Value value={getBalanceNumber(myXIni)}/>
+            <Label text={`~ ${xIniToIni.div(10 ** 18).toFixed(2)} Ini`}/>
           </StyledCardHeader>
           
           <StyledCardActions>
             <Button
-              disabled={!myXLua.toNumber() || pendingTx}
+              disabled={!myXIni.toNumber() || pendingTx}
               text={pendingTx ? 'pending Withdraw' : 'Withdraw'}
               onClick={async () => {
                 setPendingTx(true)

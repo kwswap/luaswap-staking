@@ -11,7 +11,7 @@ import { getBalanceNumber } from '../../../utils/formatBalance'
 import useBlock from '../../../hooks/useBlock'
 import useStakedValue from '../../../hooks/useStakedValue'
 import { NUMBER_BLOCKS_PER_YEAR } from '../../../sushi/lib/constants'
-import useLuaPrice from '../../../hooks/useLuaPrice'
+import useIniPrice from '../../../hooks/useIniPrice'
 import useNewReward from '../../../hooks/useNewReward'
 
 interface ApyProps {
@@ -28,7 +28,7 @@ const Apy: React.FC<ApyProps> = ({ pid, lpTokenAddress, symbolShort, tokenSymbol
     
     // const block = useBlock()
     const stakedValue = useStakedValue(pid)
-    const luaPrice = useLuaPrice()
+    const iniPrice = useIniPrice()
     const lpContract = useMemo(() => {
       return getContract(ethereum as provider, lpTokenAddress)
     }, [ethereum, lpTokenAddress])
@@ -51,8 +51,8 @@ const Apy: React.FC<ApyProps> = ({ pid, lpTokenAddress, symbolShort, tokenSymbol
             <StyledBox className="col-3">
                 <StyledLabel>APY</StyledLabel>
                 <StyledContent>{
-                newReward && stakedValue && luaPrice && stakedValue.usdValue && stakedValue.totalToken2Value && stakedValue.poolWeight ?
-                  `${parseFloat(luaPrice
+                newReward && stakedValue && iniPrice && stakedValue.usdValue && stakedValue.totalToken2Value && stakedValue.poolWeight ?
+                  `${parseFloat(iniPrice
                     .times(NUMBER_BLOCKS_PER_YEAR)
                     .times(newReward.div(10 ** 18))
                     .div(stakedValue.usdValue)
@@ -71,8 +71,8 @@ const Apy: React.FC<ApyProps> = ({ pid, lpTokenAddress, symbolShort, tokenSymbol
             </StyledBox>
             <StyledBox className="col-2">
                 <StyledLabel>Reward per block</StyledLabel>
-                <StyledContent>{newReward ? getBalanceNumber(newReward).toFixed(2) : '~'} LUA</StyledContent>
-                <StyledEquility>≈ {stakedValue && newReward && luaPrice && luaPrice.times(newReward).div(10 ** 18).div(10 ** 8).toFixed(2)} USD</StyledEquility>
+                <StyledContent>{newReward ? getBalanceNumber(newReward).toFixed(2) : '~'} INI</StyledContent>
+                <StyledEquility>≈ {stakedValue && newReward && iniPrice && iniPrice.times(newReward).div(10 ** 18).div(10 ** 8).toFixed(2)} USD</StyledEquility>
             </StyledBox>
         </StyledApy>
     )

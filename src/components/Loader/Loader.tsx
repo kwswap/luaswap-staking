@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 import CardIcon from '../CardIcon'
-import Lua from '../../assets/img/lua-icon.svg'
+import Ini from '../../assets/img/ini-icon.svg'
 interface LoaderProps {
   text?: string
 }
@@ -11,7 +11,7 @@ const Loader: React.FC<LoaderProps> = ({ text }) => {
   return (
     <StyledLoader>
       <CardIcon>
-        <StyledLua><img src={Lua} alt="LuaSwap"/></StyledLua>
+        <StyledIni><img src={Ini} alt="IniSwap"/></StyledIni>
       </CardIcon>
       {!!text && <StyledText>{text}</StyledText>}
     </StyledLoader>
@@ -38,7 +38,7 @@ const StyledLoader = styled.div`
   justify-content: center;
 `
 
-const StyledLua = styled.div`
+const StyledIni = styled.div`
   font-size: 32px;
   position: relative;
   animation: 0.8s ${scale} infinite;

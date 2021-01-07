@@ -127,7 +127,7 @@ const Convert: React.FC = () => {
         <Spacer size="lg" />
         <StyledInfo style={{color: '#ff9800'}}>
           👉 Every time you stake and unstake LP tokens, the contract will<br/>
-          automatically harvest LUA rewards for you!
+          automatically harvest INI rewards for you!
         </StyledInfo>
         <Spacer size="lg" />
         <StyledCardsWrapper>
@@ -138,7 +138,7 @@ const Convert: React.FC = () => {
             <StyledInfoLP>
               <img src={iconProtocal} height="50" style={{marginTop: 5}} />
               <div style={{width: 'calc(100% - 70px', color: '#ffffff', fontSize: 16, marginLeft: 20, marginRight: 20}}>
-                <div>Add liquidity to <a style={{color: '#f6b944', textDecoration: 'none'}} href={pairLink} target="__blank"><b>{symbolShort} pair</b></a> on {protocal} to get <span style={{color: '#f6b944'}}>{lpToken}</span> tokens. Then deposit those LP tokens on LuaSwap to receive rewards</div>
+                <div>Add liquidity to <a style={{color: '#f6b944', textDecoration: 'none'}} href={pairLink} target="__blank"><b>{symbolShort} pair</b></a> on {protocal} to get <span style={{color: '#f6b944'}}>{lpToken}</span> tokens. Then deposit those LP tokens on IniSwap to receive rewards</div>
                 <Spacer size="sm" />
                 <a style={{color: '#f6b944'}} target="__blank" href={addLiquidityLink}>
                   <b>Add Liquidity on {protocal}</b>

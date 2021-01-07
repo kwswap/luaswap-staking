@@ -9,7 +9,7 @@ import Value from '../../../components/Value'
 import useEarnings from '../../../hooks/useEarnings'
 import useReward from '../../../hooks/useReward'
 import { getBalanceNumber } from '../../../utils/formatBalance'
-import Lua from '../../../assets/img/lua-icon.svg'
+import Ini from '../../../assets/img/ini-icon.svg'
 
 interface HarvestProps {
   pid: number
@@ -25,20 +25,20 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
       <CardContent>
         <StyledCardContentInner>
           <StyledCardHeader>
-            {/* <CardIcon><img src={Lua} alt="LUA Reward"/></CardIcon> */}
+            {/* <CardIcon><img src={Ini} alt="INI Reward"/></CardIcon> */}
             <StyledValue>
-              <Label text="LUA Reward" />
+              <Label text="INI Reward" />
               <br/>
               <Value value={getBalanceNumber(earnings)}/>
               <br/>
-              <div style={{fontSize: 13, color: 'rgb(255,152,0,0.7)'}}>During the first 8 weeks since launch, <b>25% of your earned LUA</b> is available to <b>unlock immediately</b></div>
+              <div style={{fontSize: 13, color: 'rgb(255,152,0,0.7)'}}>During the first 8 weeks since launch, <b>25% of your earned INI</b> is available to <b>unlock immediately</b></div>
               <div style={{marginTop: 10, fontSize: 13, color: 'rgb(255,152,0,0.7)'}}>Beginning January 18, 2021, the remaining <b>75% will be unlocked</b> linearly every block <b>over 1 year</b>.</div>
             </StyledValue>
           </StyledCardHeader>
           <StyledCardActions>
             <Button
               disabled={!earnings.toNumber() || pendingTx}
-              text={pendingTx ? 'Collecting LUA' : 'Harvest'}
+              text={pendingTx ? 'Collecting INI' : 'Harvest'}
               onClick={async () => {
                 setPendingTx(true)
                 await onReward()

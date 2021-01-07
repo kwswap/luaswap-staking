@@ -2,8 +2,8 @@
   {
     "inputs": [
       {
-        "internalType": "contract LuaToken",
-        "name": "_lua",
+        "internalType": "contract IniToken",
+        "name": "_ini",
         "type": "address"
       },
       {
@@ -127,7 +127,7 @@
         "type": "uint256"
       }
     ],
-    "name": "SendLuaReward",
+    "name": "SendIniReward",
     "type": "event"
   },
   {
@@ -273,10 +273,10 @@
   },
   {
     "inputs": [],
-    "name": "lua",
+    "name": "ini",
     "outputs": [
       {
-        "internalType": "contract LuaToken",
+        "internalType": "contract IniToken",
         "name": "",
         "type": "address"
       }
@@ -289,7 +289,7 @@
     "name": "migrator",
     "outputs": [
       {
-        "internalType": "contract IMigratorToLuaSwap",
+        "internalType": "contract IMigratorToIniSwap",
         "name": "",
         "type": "address"
       }
@@ -356,7 +356,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "accLuaPerShare",
+        "name": "accIniPerShare",
         "type": "uint256"
       }
     ],
@@ -492,7 +492,7 @@
   {
     "inputs": [
       {
-        "internalType": "contract IMigratorToLuaSwap",
+        "internalType": "contract IMigratorToIniSwap",
         "name": "_migrator",
         "type": "address"
       }

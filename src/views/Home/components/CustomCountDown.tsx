@@ -8,7 +8,7 @@ interface CustomCountDownProp {
     date: string | number | Date
 }
 // Random component
-const Completionist = () => <StyleHeading>Welcome to LuaSwap!</StyleHeading>
+const Completionist = () => <StyleHeading>Welcome to IniSwap!</StyleHeading>
 
 // Renderer callback with condition
 // @ts-ignore

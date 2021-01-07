@@ -1,5 +1,5 @@
 {
-  "name": "lua-frontend",
+  "name": "ini-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,7 +28,7 @@
     "build": "CI= GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "yarn build && cp ./build/index.html ./build/200.html && surge ./build luaswap.org"
+    "deploy": "yarn build && cp ./build/index.html ./build/200.html && surge ./build iniswap.org"
   },
   "eslintConfig": {
     "extends": "react-app"

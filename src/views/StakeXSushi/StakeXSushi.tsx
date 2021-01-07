@@ -8,7 +8,7 @@ import useSushi from '../../hooks/useSushi'
 import {getContract} from '../../utils/erc20'
 import UnstakeXSushi from './components/UnstakeXSushi'
 import StakeSushi from "./components/StakeSushi";
-import {getXLuaAddress, getXSushiSupply} from "../../sushi/utils";
+import {getXIniAddress, getXSushiSupply} from "../../sushi/utils";
 import BigNumber from "bignumber.js";
 import {getBalanceNumber} from "../../utils/formatBalance";
 import ConvertMakerCards from '../../components/ConvertMakerCards'
@@ -16,7 +16,7 @@ import Container from '../../components/Container'
 
 const StakeXSushi: React.FC = () => {
   const sushi = useSushi()
-  const tokenAddress = getXLuaAddress(sushi)
+  const tokenAddress = getXIniAddress(sushi)
 
   const [totalSupply, setTotalSupply] = useState<BigNumber>()
   const {ethereum} = useWallet()
@@ -41,7 +41,7 @@ const StakeXSushi: React.FC = () => {
         <StyledCardsWrapper>
           <StyledCardWrapper>
             <UnstakeXSushi
-              xLuaTokenAddress={tokenAddress}
+              xIniTokenAddress={tokenAddress}
             />
           </StyledCardWrapper>
           <Spacer/>
@@ -54,9 +54,9 @@ const StakeXSushi: React.FC = () => {
         <StyledCardsWrapper>
           <StyledCardWrapper>
           <StyledInfo>
-            Users who stake LUA in LuaSafe will receive xLUA LP tokens which represent their proportion of LUA staked. Stakers will need to withdraw their xLUA LP tokens in order to receive their LUA reward.
+            Users who stake INI in IniSafe will receive xINI LP tokens which represent their proportion of INI staked. Stakers will need to withdraw their xINI LP tokens in order to receive their INI reward.
             {/* <br/>
-            {totalSupply ? `There are currently ${getBalanceNumber(totalSupply)} xLUA in the whole pool.` : '' } */}
+            {totalSupply ? `There are currently ${getBalanceNumber(totalSupply)} xINI in the whole pool.` : '' } */}
           </StyledInfo>
           </StyledCardWrapper>
         </StyledCardsWrapper>
@@ -72,7 +72,7 @@ const StakeXSushi: React.FC = () => {
       <StyledHeading>SELECT PAIR TO CONVERT</StyledHeading>
       <StyledInfoWrapper>
           <StyledNoteWrapper>
-            The core team will trigger distribution every Monday, generally around noon Singapore time (GMT+8) or earlier if the pair’s collected fee reaches a certain significant amount (equivalent to at least 3,000 LUA after converted). Users do not need to pay any gas fee for the distribution unless they choose to manually trigger the distribution process themselves.
+            The core team will trigger distribution every Monday, generally around noon Singapore time (GMT+8) or earlier if the pair’s collected fee reaches a certain significant amount (equivalent to at least 3,000 INI after converted). Users do not need to pay any gas fee for the distribution unless they choose to manually trigger the distribution process themselves.
           </StyledNoteWrapper>
       </StyledInfoWrapper>
       <SpacerRes>
@@ -80,7 +80,7 @@ const StakeXSushi: React.FC = () => {
       </SpacerRes>
       {/* <StyledInfoWrapper>
           <StyledNoteWrapper>
-            ℹ️ The core team will trigger distribution every Monday, generally around noon Singapore time (GMT+8) or earlier if the pair’s collected fee reaches a certain significant amount (equivalent to at least 3,000 LUA after converted). Users do not need to pay any gas fee for the distribution unless they choose to manually trigger the distribution process themselves.
+            ℹ️ The core team will trigger distribution every Monday, generally around noon Singapore time (GMT+8) or earlier if the pair’s collected fee reaches a certain significant amount (equivalent to at least 3,000 INI after converted). Users do not need to pay any gas fee for the distribution unless they choose to manually trigger the distribution process themselves.
           </StyledNoteWrapper>
       </StyledInfoWrapper> */}
       <SpacerRes>

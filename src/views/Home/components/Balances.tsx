@@ -15,11 +15,11 @@ import useTokenBalance from '../../../hooks/useTokenBalance'
 import useSushi from '../../../hooks/useSushi'
 import { getNewRewardPerBlock, getSushiAddress, getSushiSupply } from '../../../sushi/utils'
 import { getBalanceNumber } from '../../../utils/formatBalance'
-import Lua from '../../../assets/img/lua-icon.svg'
-import Luas from '../../../assets/img/luas-icon.svg'
+import Ini from '../../../assets/img/ini-icon.svg'
+import Inis from '../../../assets/img/inis-icon.svg'
 import useNewReward from '../../../hooks/useNewReward'
-import useLuaTotalSupply from '../../../hooks/useLuaTotalSupply'
-import useLuaCirculatingSupply from '../../../hooks/useLuaCirculatingSupply'
+import useIniTotalSupply from '../../../hooks/useIniTotalSupply'
+import useIniCirculatingSupply from '../../../hooks/useIniCirculatingSupply'
 
 const PendingRewards: React.FC = () => {
   const [start, setStart] = useState(0)
@@ -65,8 +65,8 @@ const PendingRewards: React.FC = () => {
 
 const Balances = memo(() => {
   const newReward = useNewReward()
-  const totalSupply = useLuaTotalSupply()
-  const circulatingSupply = useLuaCirculatingSupply()
+  const totalSupply = useIniTotalSupply()
+  const circulatingSupply = useIniCirculatingSupply()
   const sushi = useSushi()
   const sushiBalance = useTokenBalance(getSushiAddress(sushi))
   const { account, ethereum }: { account: any; ethereum: any } = useWallet()
@@ -78,10 +78,10 @@ const Balances = memo(() => {
           <StyledBalances>
             <StyledBalance>
               {/* <SushiIcon /> */}
-              <img src={Lua} alt="LUA Balance"/>
+              <img src={Ini} alt="INI Balance"/>
               <Spacer />
               <div style={{ flex: 1 }}>
-                <Label text="Your Available LUA Balance" />
+                <Label text="Your Available INI Balance" />
                 <Value
                   value={!!account ? getBalanceNumber(sushiBalance) : 'Locked'}
                 />
@@ -92,7 +92,7 @@ const Balances = memo(() => {
         <Footnote>
           Pending harvest
           <FootnoteValue>
-            <PendingRewards /> LUA
+            <PendingRewards /> INI
           </FootnoteValue>
         </Footnote>
       </Card>
@@ -102,10 +102,10 @@ const Balances = memo(() => {
         <CardContent>
           <StyledBalance>
             {/* <SushiIcon /> */}
-            <img src={Luas} alt="Total LUA Supply"/>
+            <img src={Inis} alt="Total INI Supply"/>
             <Spacer />
             <div style={{ flex: 1 }}>
-              <Label text="LUA Circulating Supply" />
+              <Label text="INI Circulating Supply" />
               <Value
                 value={circulatingSupply ? getBalanceNumber(circulatingSupply) : '~'}
               />
@@ -115,8 +115,8 @@ const Balances = memo(() => {
         <Footnote>
           Total Supply
           <FootnoteValue>
-            {/* {newReward ? `${getBalanceNumber(newReward)} LUA` : 'Loading...'} */}
-            {totalSupply ? `${parseFloat(getBalanceNumber(totalSupply).toFixed(2)).toLocaleString('en-US')} LUA` : '~'}
+            {/* {newReward ? `${getBalanceNumber(newReward)} INI` : 'Loading...'} */}
+            {totalSupply ? `${parseFloat(getBalanceNumber(totalSupply).toFixed(2)).toLocaleString('en-US')} INI` : '~'}
           </FootnoteValue>
         </Footnote>
       </Card>

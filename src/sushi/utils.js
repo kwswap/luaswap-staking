@@ -35,7 +35,7 @@ export const getSushiAddress = (sushi) => {
   return sushi && sushi.sushiAddress
 }
 
-export const getXLuaAddress = (sushi) => {
+export const getXIniAddress = (sushi) => {
   return sushi && sushi.xSushiAddress
 }
 
@@ -97,7 +97,7 @@ export const getFarms = (sushi) => {
           isHot,
           isNew,
           tokenContract,
-          earnToken: 'lua',
+          earnToken: 'ini',
           earnTokenAddress: sushi.contracts.sushi.options.address,
           icon,
           icon2,
@@ -212,7 +212,7 @@ export const getSushiSupply = async (sushi) => {
   )
 }
 
-export const getLuaCirculatingSupply = async (sushi) => {
+export const getIniCirculatingSupply = async (sushi) => {
   var chef = getMasterChefContract(sushi)
   var a = new BigNumber(
     await UnknownBlock(sushi.contracts.sushi._address, 'circulatingSupply():(uint256)', [], true)
@@ -333,10 +333,10 @@ export const redeem = async (masterChefContract, account) => {
   }
 }
 
-export const getCanUnlockLua = async (sushi, account) => {
-  var lua = getSushiContract(sushi)
+export const getCanUnlockIni = async (sushi, account) => {
+  var ini = getSushiContract(sushi)
 
-  return new BigNumber(await lua.methods.canUnlockAmount(account).call())
+  return new BigNumber(await ini.methods.canUnlockAmount(account).call())
 }
 
 export const getXSushiSupply = async (sushi) => {
@@ -344,14 +344,14 @@ export const getXSushiSupply = async (sushi) => {
 }
 
 export const getLockOf = async (sushi, account) => {
-  var lua = getSushiContract(sushi)
+  var ini = getSushiContract(sushi)
 
-  return new BigNumber(await lua.methods.lockOf(account).call())
+  return new BigNumber(await ini.methods.lockOf(account).call())
 }
 
 export const unlock = async (sushi, account) => {
-  var lua = getSushiContract(sushi)
-  return lua.methods
+  var ini = getSushiContract(sushi)
+  return ini.methods
     .unlock()
     .send({ from: account })
     .on('transactionHash', (tx) => {

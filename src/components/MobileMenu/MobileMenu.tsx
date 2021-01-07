@@ -18,7 +18,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
             Home
           </StyledLink>
 
-          <StyledAbsoluteLink href="https://app.luaswap.org/#/swap" target="_blank">
+          <StyledAbsoluteLink href="https://app.iniswap.org/#/swap" target="_blank">
             Swap
           </StyledAbsoluteLink>
           <StyledLink2
@@ -29,7 +29,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
           >
             Staking
           </StyledLink2>
-          {/* <StyledAbsoluteLink href="https://snapshot.luaswap.org/#/luaswap" target="_blank">
+          {/* <StyledAbsoluteLink href="https://snapshot.iniswap.org/#/iniswap" target="_blank">
             Proposals
           </StyledAbsoluteLink> */}
         </StyledMobileMenu>

@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import Lua from '../../assets/img/luaswap.png'
-import LuaLogo from '../../assets/img/logo.png'
+import Ini from '../../assets/img/iniswap.png'
+import IniLogo from '../../assets/img/logo.png'
 
 const Logo: React.FC = () => {
   return (
     <StyledLogo to="/">
-      <img className="d-sm-none" src={Lua} height="50" style={{ marginTop: -4 }} />
-      <img className="d-md-none" src={LuaLogo} height="40" style={{ marginTop: -4 }} />
+      <img className="d-sm-none" src={Ini} height="50" style={{ marginTop: -4 }} />
+      <img className="d-md-none" src={IniLogo} height="40" style={{ marginTop: -4 }} />
     </StyledLogo>
   )
 }

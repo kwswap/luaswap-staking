@@ -22,7 +22,7 @@ interface StakeProps {
 }
 
 const StakeSushi: React.FC<StakeProps> = ({}) => {
-  const tokenName = "LUA"
+  const tokenName = "INI"
   const [requestedApproval, setRequestedApproval] = useState(false)
 
   const allowance = useAllowanceStaking()
@@ -58,10 +58,10 @@ const StakeSushi: React.FC<StakeProps> = ({}) => {
       <CardContent>
         <StyledCardContentInner>
           <StyledCardHeader>
-            <Label text={`YOUR LUA`}/>
+            <Label text={`YOUR INI`}/>
             <br/>
             <Value value={getBalanceNumber(tokenBalance)}/>
-            <Label text={`LUA Tokens Available`}/>
+            <Label text={`INI Tokens Available`}/>
           </StyledCardHeader>
           
           <StyledCardActions>
@@ -69,7 +69,7 @@ const StakeSushi: React.FC<StakeProps> = ({}) => {
               <Button
                 disabled={requestedApproval}
                 onClick={handleApprove}
-                text={`Approve LUA`}
+                text={`Approve INI`}
               />
             ) : (
               <>

@@ -4,7 +4,7 @@ import { provider } from 'web3-core'
 import BigNumber from 'bignumber.js'
 import { useWallet } from 'use-wallet'
 
-import { getCanUnlockLua, getEarned, getMasterChefContract } from '../sushi/utils'
+import { getCanUnlockIni, getEarned, getMasterChefContract } from '../sushi/utils'
 import useSushi from './useSushi'
 import useBlock from './useBlock'
 
@@ -18,7 +18,7 @@ const useCanUnlockAmount = () => {
   const block = useBlock()
 
   const fetchBalance = useCallback(async () => {
-    const balance = await getCanUnlockLua(sushi, account)
+    const balance = await getCanUnlockIni(sushi, account)
     setBalance(balance)
   }, [account, sushi])
 

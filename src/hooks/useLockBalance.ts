@@ -4,7 +4,7 @@ import { provider } from 'web3-core'
 import BigNumber from 'bignumber.js'
 import { useWallet } from 'use-wallet'
 
-import { getCanUnlockLua, getEarned, getLockOf, getMasterChefContract } from '../sushi/utils'
+import { getCanUnlockIni, getEarned, getLockOf, getMasterChefContract } from '../sushi/utils'
 import useSushi from './useSushi'
 import useBlock from './useBlock'
 

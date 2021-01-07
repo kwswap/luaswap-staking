@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Switch, useRouteMatch } from 'react-router-dom'
 import { useWallet } from 'use-wallet'
 
-import Luas from '../../../assets/img/luas-icon.svg'
+import Inis from '../../../assets/img/inis-icon.svg'
 
 import Button from '../../../components/Button'
 import Page from '../../../components/Page'
@@ -24,8 +24,8 @@ const FarmsContainer: React.FC = () => {
   return <>
     <Route exact path={path}>
       <PageHeader
-        icon={<img src={Luas} height="120" />}
-        subtitle="Earn LUA tokens by staking LuaSwap SPL Tokens."
+        icon={<img src={Inis} height="120" />}
+        subtitle="Earn INI tokens by staking IniSwap SPL Tokens."
         title="Select Your Favorite Dishes"
       />
       <FarmCards />
@@ -40,8 +40,8 @@ const FarmsContainer: React.FC = () => {
   //       <>
   //         <Route exact path={path}>
   //           <PageHeader
-  //             icon={<img src={Luas} height="120" />}
-  //             subtitle="Earn LUA tokens by staking LuaSwap SPL Tokens."
+  //             icon={<img src={Inis} height="120" />}
+  //             subtitle="Earn INI tokens by staking IniSwap SPL Tokens."
   //             title="Select Your Favorite Dishes"
   //           />
   //           <FarmCards />
